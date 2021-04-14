@@ -39,6 +39,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspicionTime: 3
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 3
 --- !u!1001 &7790600022375719949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,10 +54,15 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114494340949990892, guid: 602087e5ada69494498153ba0b599a09,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 114716963809253908, guid: 602087e5ada69494498153ba0b599a09,
         type: 3}
       propertyPath: health
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2542059172312490782, guid: 602087e5ada69494498153ba0b599a09,
         type: 3}
