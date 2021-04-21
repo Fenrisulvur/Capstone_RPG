@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using RPG.Core;
+using RPG.Attributes;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -16,7 +17,7 @@ namespace RPG.Combat
 
         float damage = 0;
         Health target = null;
-
+        GameObject instigator = null;
         private void Start() {
             transform.LookAt(GetAimLocation());
         }
@@ -24,15 +25,15 @@ namespace RPG.Combat
         private void Update() {
             if (target == null) return;
             
-            print("Kerchow");
             if (isHoming && !target.IsDead() ) transform.LookAt(GetAimLocation());
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
-        public void SetTarget(Health target, float damage)
+        public void SetTarget(Health target, GameObject instigator, float damage)
         {
             this.target = target;
             this.damage = damage;
+            this.instigator = instigator;
             print(this.target);
 
             Destroy(gameObject, maxLifetime);
@@ -41,7 +42,7 @@ namespace RPG.Combat
         private void OnTriggerEnter(Collider other) {
             if (other.GetComponent<Health>() != target) return;
             if (isHoming && target.IsDead()) return;
-            target.TakeDamage(damage);
+            target.TakeDamage(instigator, damage);
 
             speed = 0;
 

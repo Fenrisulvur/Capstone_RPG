@@ -14,17 +14,20 @@ namespace RPG.SceneManagement
             yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
         }
 
-        // void Update()
-        // {
-        //     if (Input.GetKeyDown(KeyCode.L))
-        //     {
-        //         Load();
-        //     }
-        //     if (Input.GetKeyDown(KeyCode.S))
-        //     {
-        //         Save();
-        //     }
-        // }
+        private void Update() {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                Save();
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Load();
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                Delete();
+            }
+        }
 
         public void Save()
         {
@@ -35,6 +38,12 @@ namespace RPG.SceneManagement
         {
             //Call to saving system
             GetComponent<SavingSystem>().Load(defaultSaveFile);
+        }
+
+        public void Delete()
+        {
+            //Call to saving system
+            GetComponent<SavingSystem>().Delete(defaultSaveFile);
         }
     }
 }

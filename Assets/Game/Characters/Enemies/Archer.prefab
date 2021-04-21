@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7893367854646915471, guid: a17d5ddc5901e8c4eb3d34eca5b02f5b,
+        type: 3}
+      propertyPath: characterClass
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7893409981834672609, guid: a17d5ddc5901e8c4eb3d34eca5b02f5b,
         type: 3}
       propertyPath: defaultWeapon
