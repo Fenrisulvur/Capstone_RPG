@@ -19,7 +19,7 @@ namespace RPG.Stats
 
             if (levels.Length < level)
             {
-                return levels[levels.Length-1];
+                return 0;//levels[levels.Length-1];
             }
 
             

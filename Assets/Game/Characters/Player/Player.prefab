@@ -99,6 +99,17 @@ PrefabInstance:
       propertyPath: characterClass
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114601339327976834, guid: 602087e5ada69494498153ba0b599a09,
+        type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 5071833033516135419, guid: b1d117d4954c3254f9b8f12fd6470da9,
+        type: 3}
+    - target: {fileID: 114601339327976834, guid: 602087e5ada69494498153ba0b599a09,
+        type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114716963809253908, guid: 602087e5ada69494498153ba0b599a09,
         type: 3}
       propertyPath: health

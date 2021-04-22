@@ -541,7 +541,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1581395, y: 1}
+    m_SensorSize: {x: 2.04102, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2227,7 +2227,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -523, y: 190.19989}
-  m_SizeDelta: {x: 202.8729, y: 38.038666}
+  m_SizeDelta: {x: 322.16568, y: 38.038666}
   m_Pivot: {x: 0.00000017508864, y: 1}
 --- !u!114 &866271505
 MonoBehaviour:
@@ -2899,7 +2899,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1581395, y: 1}
+    m_SensorSize: {x: 2.04102, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4462,7 +4462,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1581395, y: 1}
+    m_SensorSize: {x: 2.04102, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5798,9 +5798,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 227.8999
       objectReference: {fileID: 0}
+    - target: {fileID: 71358870, guid: f653c6085dcd09b4381bbeea9e74fc18, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 322.16568
+      objectReference: {fileID: 0}
     - target: {fileID: 720581034, guid: f653c6085dcd09b4381bbeea9e74fc18, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 264.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 720581034, guid: f653c6085dcd09b4381bbeea9e74fc18, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 322.16568
       objectReference: {fileID: 0}
     - target: {fileID: 1295277539, guid: f653c6085dcd09b4381bbeea9e74fc18, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6025,7 +6033,7 @@ PrefabInstance:
     - target: {fileID: 736827113723707297, guid: ed6da1781ade2b6449f68ac0bfc6c5fe,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7547739
+      value: 2.04102
       objectReference: {fileID: 0}
     - target: {fileID: 736827114554288187, guid: ed6da1781ade2b6449f68ac0bfc6c5fe,
         type: 3}
