@@ -5031,6 +5031,21 @@ PrefabInstance:
       propertyPath: lifeAfterImpact
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3414408082025661487, guid: d8cb97d88461a17409b7f44fec603fff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690808199592751572, guid: d8cb97d88461a17409b7f44fec603fff,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: da0093ebe4323b846a8f67e40229df09, type: 3}
+    - target: {fileID: 6619930089689575469, guid: d8cb97d88461a17409b7f44fec603fff,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c4a6d3173c94d04c9896a4afd752f69, type: 3}
     - target: {fileID: 8024876355534231563, guid: d8cb97d88461a17409b7f44fec603fff,
         type: 3}
       propertyPath: m_Size.x
