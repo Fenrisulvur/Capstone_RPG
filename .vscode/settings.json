@@ -53,5 +53,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "workbench.colorTheme": "eppz!"
+    "workbench.colorTheme": "eppz!",
+    "git.ignoreLimitWarning": true
 }
