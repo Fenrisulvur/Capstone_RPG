@@ -3,7 +3,7 @@ using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
 using System;
-using GameDevTV.Utils;
+using RPG.Utils;
 using UnityEngine.Events;
 
 namespace RPG.Attributes
@@ -88,6 +88,11 @@ namespace RPG.Attributes
                 Die();
                 AwardExperience(instigator);
             }
+        }
+
+        public void Heal(float healthToRestore)
+        {
+            healthPoints.value = Mathf.Min(healthPoints.value + healthToRestore, GetHealthMaxValue());
         }
 
         private void AwardExperience(GameObject instigator)

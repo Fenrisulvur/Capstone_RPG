@@ -36,7 +36,6 @@ namespace RPG.Combat
             this.target = target;
             this.damage = damage;
             this.instigator = instigator;
-            print(this.target);
 
             Destroy(gameObject, maxLifetime);
         }

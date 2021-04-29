@@ -24,8 +24,11 @@ namespace RPG.Control
 
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
-        [SerializeField] float maxNavPathLength = 40;
+        [SerializeField] float raycastRadius = .1f;
         
+        bool isDraggingUI = false;
+
+
         private void Awake() {
             health = GetComponent<Health>();
         }
@@ -63,7 +66,7 @@ namespace RPG.Control
 
         RaycastHit[] RaycastAllSorted()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), raycastRadius);
             float[] distances = new float[hits.Length];
             for (int i = 0; i < hits.Length; i++)
             {
@@ -75,11 +78,23 @@ namespace RPG.Control
 
         private bool InteractWithUI()
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                isDraggingUI = false;
+            }
+
             if (EventSystem.current.IsPointerOverGameObject())
             {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isDraggingUI = true;
+                }
                 SetCursor(CursorType.UI);
                 return true;
             }
+
+            if (isDraggingUI) return true;
+            
             return false;
         }
 
@@ -109,6 +124,7 @@ namespace RPG.Control
             bool hasHit = RaycastNavMesh(out target);
             if (hasHit)
             {
+                if (!GetComponent<Mover>().CanMoveTo(target)) return false;
                 if (Input.GetMouseButton(0) || Input.GetMouseButton(0))
                 {
                     GetComponent<Mover>().StartMoveAction(target, 1f);
@@ -138,22 +154,12 @@ namespace RPG.Control
             bool hasPath = NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, path);
             if (!hasPath) return false;
             if (path.status != NavMeshPathStatus.PathComplete) return false;
-            if (GetPathLength(path) > maxNavPathLength) return false;
+            
 
             return true;
         }
 
-        private float GetPathLength(NavMeshPath path)
-        {
-            float totalLength = 0;
-            if (path.corners.Length < 2 ) return totalLength;
-            for (int i = 0; i < path.corners.Length - 1; i++)
-            {
-                totalLength += Vector3.Distance(path.corners[i], path.corners[i+1]);
-            }
-
-            return totalLength;
-        }
+        
 
         private static Ray GetMouseRay()
         {

@@ -1,14 +1,17 @@
 ﻿using RPG.Attributes;
 using UnityEngine;
+using RPG.Inventories;
+using RPG.Stats;
+using System.Collections.Generic;
 
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
-    public class WeaponConfig : ScriptableObject
+    public class WeaponConfig : EquipableItem, IModifierProvider
     {
         
         [SerializeField] AnimatorOverrideController animatorOverride = null;
-        [SerializeField] GameObject equippedPrefab = null;
+        [SerializeField] Weapon equippedPrefab = null;
         [SerializeField] float weaponDamage = 5f;
         [SerializeField] float percentageBonus = 0f;
         [SerializeField] float weaponRange = 2f;
@@ -17,14 +20,17 @@ namespace RPG.Combat
 
         const string weaponName = "Weapon";
 
-        public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
+        public Weapon Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             DestroyOldWeapon(rightHand, leftHand);
+
+            Weapon weapon = null;
+            
             if (equippedPrefab != null)
             {
                 Transform handTransform = GetTransform(rightHand, leftHand);
-                GameObject weapon = Instantiate(equippedPrefab, handTransform);
-                weapon.name = weaponName;
+                weapon = Instantiate(equippedPrefab, handTransform);
+                weapon.gameObject.name = weaponName;
             }
 
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
@@ -36,6 +42,12 @@ namespace RPG.Combat
             {
                 animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
+
+            if (weapon == null)
+            {
+                Debug.LogError("Spawned weapon is null");
+            }
+            return weapon;
         }
 
         private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
@@ -81,5 +93,20 @@ namespace RPG.Combat
             return weaponRange;
         }
 
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return weaponDamage;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return percentageBonus;
+            }
+        }
     }
 }
