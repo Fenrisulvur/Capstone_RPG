@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using RPG.Core.UI.Dragging;
 using RPG.Inventories;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace RPG.UI.Inventories
 {
     /// <summary>
     /// The UI slot for the player action bar.
     /// </summary>
-    public class ActionSlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>
+    public class ActionSlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>, IPointerClickHandler
     {
         // CONFIG DATA
         [SerializeField] InventoryItemIcon icon = null;
@@ -57,6 +58,11 @@ namespace RPG.UI.Inventories
         void UpdateIcon()
         {
             icon.SetItem(GetItem(), GetNumber());
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            store.Use(index, GameObject.FindGameObjectWithTag("Player"));
         }
     }
 }

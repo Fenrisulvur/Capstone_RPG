@@ -6,20 +6,28 @@ using RPG.Saving;
 
 namespace RPG.SceneManagement
 {
+
     public class SavingWrapper : MonoBehaviour
     {
-        const string defaultSaveFile = "dev-save";
+        const string defaultSaveFile = "save";
 
-        private void Awake() 
+        [SerializeField] float fadeInTime = 0.2f;
+
+        private void Awake()
         {
-            StartCoroutine(LoadLastScene());    
+            StartCoroutine(LoadLastScene());
         }
 
-        IEnumerator LoadLastScene() {
+        private IEnumerator LoadLastScene()
+        {
             yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
+            Fader fader = FindObjectOfType<Fader>();
+            fader.FadeOutImmediate();
+            yield return fader.FadeIn(fadeInTime);
         }
 
-        private void Update() {
+        private void Update()
+        {
             if (Input.GetKeyDown(KeyCode.S))
             {
                 Save();
@@ -28,10 +36,15 @@ namespace RPG.SceneManagement
             {
                 Load();
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.Delete))
             {
                 Delete();
             }
+        }
+
+        public void Load()
+        {
+            GetComponent<SavingSystem>().Load(defaultSaveFile);
         }
 
         public void Save()
@@ -39,15 +52,8 @@ namespace RPG.SceneManagement
             GetComponent<SavingSystem>().Save(defaultSaveFile);
         }
 
-        public void Load()
-        {
-            //Call to saving system
-            StartCoroutine( GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile) );
-        }
-
         public void Delete()
         {
-            //Call to saving system
             GetComponent<SavingSystem>().Delete(defaultSaveFile);
         }
     }

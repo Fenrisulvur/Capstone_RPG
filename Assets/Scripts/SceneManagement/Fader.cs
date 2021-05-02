@@ -5,11 +5,12 @@ namespace RPG.SceneManagement
 {
     public class Fader : MonoBehaviour
     {
-        CanvasGroup CanvasGroup;
+        CanvasGroup canvasGroup;
         Coroutine currentlyActiveFader = null;
 
-        private void Start() {
-            CanvasGroup = GetComponent<CanvasGroup>();
+        private void Awake()
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
         }
 
         IEnumerator FadeOutIn()
@@ -18,6 +19,11 @@ namespace RPG.SceneManagement
             print("Faded out");
             yield return FadeIn(3f);
             print("Faded in");
+        }
+
+        public void FadeOutImmediate()
+        {
+            canvasGroup.alpha = 1;
         }
 
         public Coroutine FadeOut(float time)
@@ -42,9 +48,9 @@ namespace RPG.SceneManagement
 
         private IEnumerator FadeRoutine(float target, float time)
         {
-            while (!Mathf.Approximately(CanvasGroup.alpha, target))
+            while (!Mathf.Approximately(canvasGroup.alpha, target))
             {
-                CanvasGroup.alpha = Mathf.MoveTowards(CanvasGroup.alpha, target, Time.deltaTime / time);
+                canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, target, Time.deltaTime / time);
                 yield return null;
             }
         }

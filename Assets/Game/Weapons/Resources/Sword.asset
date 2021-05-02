@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   itemID: d8f91e9f-d06f-4be4-90a7-d1b53bc1f851
-  displayName: 
-  description: 
-  icon: {fileID: 21300000, guid: d19901b0ee3c38743a7d383bd484b0b5, type: 3}
+  displayName: Sword
+  description: A basic sword.
+  icon: {fileID: 21300000, guid: d2f7d48eb9895b842adab59441aceba0, type: 3}
   pickup: {fileID: 2690601011857517588, guid: f2181dd22012fd24ba10c19a9372dfc0, type: 3}
   stackable: 0
   allowedEquipLocation: 5

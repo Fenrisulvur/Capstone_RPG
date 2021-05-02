@@ -10,7 +10,6 @@ namespace RPG.Inventories
     /// This class should be used as a base. Subclasses must implement the `Use`
     /// method.
     /// </remarks>
-    [CreateAssetMenu(menuName = ("RPG/RPG.UI.InventorySystem/Action Item"))]
     public class ActionItem : InventoryItem
     {
         // CONFIG DATA
@@ -23,9 +22,9 @@ namespace RPG.Inventories
         /// Trigger the use of this item. Override to provide functionality.
         /// </summary>
         /// <param name="user">The character that is using this action.</param>
-        public virtual void Use(GameObject user)
-        {
-            Debug.Log("Using action: " + this);
+        public virtual void Use(GameObject user) 
+        { 
+            Debug.Log("No action");
         }
 
         public bool isConsumable()

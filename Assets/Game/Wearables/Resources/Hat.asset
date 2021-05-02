@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 4bb65567-9313-41a7-bea3-9ff71d8e2c47
   displayName: Hat Test
-  description: BOTTOM TEXT
+  description: 'Basic hat
+
+'
   icon: {fileID: 21300000, guid: c1b61b3a91732a747a8496fc75a13fe2, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 0

@@ -120,7 +120,7 @@ namespace RPG.Combat
             if (currentWeapon.value != null)
             {
                 currentWeapon.value.OnHit();
-            }
+            } 
 
             if (currentWeaponConfig.HasProjectile())
             {
