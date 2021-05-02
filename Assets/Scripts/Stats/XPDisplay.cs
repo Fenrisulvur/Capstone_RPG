@@ -19,14 +19,15 @@ namespace RPG.Stats
             stats = GameObject.FindWithTag("Player").GetComponent<BaseStats>();
             experience = GameObject.FindWithTag("Player").GetComponent<Experience>();
             experience.onExperienceGained += RedrawXPBar;
-
+            stats.onLevelUp += RedrawXPBar;
         }
 
         private void RedrawXPBar()
         {
-            xpDisplay.SetText(String.Format("{0:0.0}/{1:0.0}", experience.GetExperience(), stats.GetNextLevelXpReq()));
+            int lvl = stats.GetLevel();
+            xpDisplay.SetText(String.Format("{0:0.0}/{1:0.0}", experience.GetExperience()-stats.GetLevelXpReq(lvl - 1), stats.GetLevelXpReq(lvl)-stats.GetLevelXpReq(lvl-1)));
             lvlDisplay.SetText("Lvl: "+stats.GetLevel());
-            foreground.localScale = new Vector3((experience.GetExperience()/stats.GetNextLevelXpReq()), 1, 1);
+            foreground.localScale = new Vector3( Mathf.Clamp( ( (experience.GetExperience()-stats.GetLevelXpReq(lvl - 1)) / (stats.GetLevelXpReq(lvl)-stats.GetLevelXpReq(lvl - 1) )), 0, 1)  , 1, 1);
         }
 
 

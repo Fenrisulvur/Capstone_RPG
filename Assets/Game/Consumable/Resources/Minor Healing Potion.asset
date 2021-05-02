@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:RPG.Consumables:HealingPotion
   itemID: 67348045-9ccd-4d47-8077-ddfbffd14247
   displayName: Minor Healing Potion
-  description: Heals 30 HP
+  description: Heals 80 HP
   icon: {fileID: 21300000, guid: aba0f700d91d4fc4fa8c724899ab04ab, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 1
   consumable: 1
-  healthToHeal: 30
+  healthToHeal: 80
   isPercentage: 0
   potionUseFX: {fileID: 5071833033516135419, guid: 6fdbec93bf1c7fc4796e5eefed2aa8f7,
     type: 3}

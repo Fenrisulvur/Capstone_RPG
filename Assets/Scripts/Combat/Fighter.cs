@@ -54,12 +54,48 @@ namespace RPG.Combat
             if (!GetIsInRange(target.transform))
             {
                 GetComponent<Mover>().MoveTo(target.transform.position, 1f);
+                return;
             }
-            else
+            // if( GetIsInRange(target.transform) && !IsLOS(target.gameObject))
+            // {
+            //     GetComponent<Mover>().MoveTo(target.transform.position, 1f);
+            //     return;
+            // }
+            
+            GetComponent<Mover>().Cancel();
+            AttackBehaviour();
+            
+        }
+
+        private bool IsLOS(GameObject target)
+        {
+            float distance = 1000.0f; // how far they can see the target
+            float arc = 45.0f; // their field of view
+            float heightOffet = 1.7f;
+
+            if (Vector3.Distance(transform.position, target.transform.position) < distance)
             {
-                GetComponent<Mover>().Cancel();
-                AttackBehaviour();
+                if (Vector3.Distance(transform.position, target.transform.position) < 4 ) return true;
+                // enemy is within distance
+
+                if (Vector3.Dot(transform.forward, target.transform.position) > 0 && Vector3.Angle(transform.forward, target.transform.position) < arc)
+                {
+                    // enemy is ahead of me and in my field of view
+                    RaycastHit hitInfo;
+
+                    Debug.DrawRay(transform.position + new Vector3(0, heightOffet, 0), ((target.transform.position + new Vector3(0, heightOffet, 0)) - (transform.position + new Vector3(0, heightOffet, 0))) * 1000, Color.yellow);
+                    if (Physics.SphereCast(transform.position + new Vector3(0, heightOffet, 0), .2f, (target.transform.position + new Vector3(0, heightOffet, 0)) - ( transform.position + new Vector3(0, heightOffet, 0) ), out hitInfo) == true)
+                    {
+                        
+                        // we hit SOMETHING, not necessarily a player
+                        if (hitInfo.collider.gameObject.tag == "Player" || hitInfo.collider.gameObject.tag == "Enemy")
+                            return true;
+                    }
+                }
             }
+
+            return false;
+
         }
 
         public void EquipWeapon(WeaponConfig weapon)

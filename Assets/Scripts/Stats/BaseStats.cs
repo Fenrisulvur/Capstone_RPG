@@ -75,16 +75,17 @@ namespace RPG.Stats
             return currentLevel.value;
         }
 
-        public float GetNextLevelXpReq()
+        public float GetLevelXpReq(int level)
         {
+            if (level == 0) return 0;
             Experience experience = GetComponent<Experience>();
             if (experience == null) return 0;
 
             float currentXP = experience.GetExperience();
             int maxLevel = progression.GetLevels(Stat.ExperienceToLevel, characterClass);
-            if (currentLevel.value == maxLevel) return currentXP;
+            if (level >= maxLevel - 1) return currentXP;
 
-            return progression.GetStat(Stat.ExperienceToLevel, characterClass, currentLevel.value);
+            return progression.GetStat(Stat.ExperienceToLevel, characterClass, level);
         }
 
         private float GetAdditiveModifiers(Stat stat)
@@ -132,7 +133,7 @@ namespace RPG.Stats
                }
             }
 
-            return maxLevel + 1;
+            return maxLevel;
         }
 
 

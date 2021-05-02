@@ -20,18 +20,6 @@ MonoBehaviour:
   waypointDwellTime: 3
   patrolSpeedFraction: 0.2
   shoutDistance: 5
---- !u!114 &9153758069747882967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4853693020019809779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f97e3041b844274986f9a2a375aa15a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2138817234898176583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,11 +33,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scatterDistance: 1
-  dropLibrary:
-  - {fileID: 11400000, guid: 75c73a68aa7c34a4f96f2c4d87e41181, type: 2}
-  - {fileID: 11400000, guid: 66c89e17e03819548a1b3bf24da362b0, type: 2}
-  - {fileID: 11400000, guid: e6c48400150ab7b43aa2df523b44257d, type: 2}
-  numberOfDrops: 2
+  dropLibrary: {fileID: 11400000, guid: 61da9cae66b7fc94183554a8dcfe3d6e, type: 2}
+  alwaysDropLibrary: {fileID: 0}
+--- !u!114 &9153758069747882967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853693020019809779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f97e3041b844274986f9a2a375aa15a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &461029101737195464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -360,6 +357,11 @@ PrefabInstance:
     - target: {fileID: 3406424892840098302, guid: 602087e5ada69494498153ba0b599a09,
         type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406424892840098302, guid: 602087e5ada69494498153ba0b599a09,
+        type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3806844172627901534, guid: 602087e5ada69494498153ba0b599a09,

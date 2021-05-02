@@ -14,7 +14,6 @@ namespace RPG.Inventories
         // STATE
         private List<Pickup> droppedItems = new List<Pickup>();
         private List<DropRecord> otherSceneDroppedItems = new List<DropRecord>();
-
         // PUBLIC
 
         /// <summary>
@@ -36,7 +35,7 @@ namespace RPG.Inventories
         /// <param name="item">The item type for the pickup.</param>
         public void DropItem(InventoryItem item)
         {
-            SpawnPickup(item, GetDropLocation(), 1);
+                SpawnPickup(item, GetDropLocation(), 1);
         }
 
         // PROTECTED

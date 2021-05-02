@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   itemID: e5aba341-730d-4c00-b9cc-725da8c8dea6
-  displayName: Fireball
+  displayName: Fire Staff
   description: Chant to cast a fireball.
   icon: {fileID: 21300000, guid: 1df912e36534bfb439841e2eb583d4c9, type: 3}
   pickup: {fileID: 1737133728711939837, guid: 8a17da668fcd0144a916a1d91dacde0e, type: 3}
   stackable: 0
   allowedEquipLocation: 5
-  animatorOverride: {fileID: 22100000, guid: 708a6820dc09e194785c4af7f156bf07, type: 2}
-  equippedPrefab: {fileID: 114400202827281142, guid: 50599c92630011b4cb1de85035eb7660,
+  animatorOverride: {fileID: 22100000, guid: 6c09f518cea6a6549997475f19a98605, type: 2}
+  equippedPrefab: {fileID: 114400202827281142, guid: 1bbd376b2b2f4794287c19e192315882,
     type: 3}
   weaponDamage: 5
   percentageBonus: 25
+  NPCScale: 1
   weaponRange: 20
-  isRightHanded: 0
+  isRightHanded: 1
   projectile: {fileID: 8689795478661263774, guid: 1863e63c62228f949b85a26c9b562316,
     type: 3}

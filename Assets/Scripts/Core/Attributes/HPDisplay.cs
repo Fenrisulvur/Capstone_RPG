@@ -20,7 +20,7 @@ namespace RPG.Attributes
         void Update()
         {
             text.SetText(healthComponent.GetHealthValue()+"/"+healthComponent.GetHealthMaxValue());
-            foreground.localScale = new Vector3(healthComponent.GetFraction(), 1, 1);
+            foreground.localScale = new Vector3(Mathf.Clamp(healthComponent.GetFraction(), 0, 1), 1, 1);
         }
     }
 }

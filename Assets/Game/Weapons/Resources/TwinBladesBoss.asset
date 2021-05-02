@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef35b80426842243a2b07c7db0f841f, type: 3}
+  m_Name: TwinBladesBoss
+  m_EditorClassIdentifier: 
+  itemID: 40dd17a8-054d-46c2-8595-b1b46544d6ee
+  displayName: 
+  description: 
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  stackable: 0
+  allowedEquipLocation: 5
+  animatorOverride: {fileID: 22100000, guid: 51514978424f511448e8cf76ffe64a5f, type: 2}
+  equippedPrefab: {fileID: 114747334253914422, guid: fe43c68ef7bf2e04983f7e6cd66d0b89,
+    type: 3}
+  weaponDamage: 10
+  percentageBonus: 25
+  weaponRange: 4
+  isRightHanded: 1
+  projectile: {fileID: 0}

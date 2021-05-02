@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639bba91a58a2604bb97ac0a032c5516, type: 3}
+  m_Name: Starting_Chest_Loot
+  m_EditorClassIdentifier: 
+  Drops:
+  - item: {fileID: 11400000, guid: 432ecccfadac77945be2326f626b3550, type: 2}
+    amnt: 1
+  - item: {fileID: 11400000, guid: b26f66e4eb54f0346abc5998f1b2df5b, type: 2}
+    amnt: 25
+  - item: {fileID: 11400000, guid: e6c48400150ab7b43aa2df523b44257d, type: 2}
+    amnt: 1
+  - item: {fileID: 11400000, guid: f834f4a0868cb5e45b2b2d942a4ed91a, type: 2}
+    amnt: 1
+  - item: {fileID: 11400000, guid: 39f4bd6500c25704d99a78f10aeec8a9, type: 2}
+    amnt: 0
+  - item: {fileID: 11400000, guid: 36de7145c62362b42988d24c82dab443, type: 2}
+    amnt: 0
+  - item: {fileID: 11400000, guid: 75c73a68aa7c34a4f96f2c4d87e41181, type: 2}
+    amnt: 0
+  - item: {fileID: 11400000, guid: be55237cc3e14c64f8e6c5b47c00aac8, type: 2}
+    amnt: 0
+  - item: {fileID: 11400000, guid: 2e3c86bd84ad22c4eaf2573c625279a5, type: 2}
+    amnt: 0
+  - item: {fileID: 11400000, guid: c09b6dd8286acf04abb62621d2e2b394, type: 2}
+    amnt: 0
+  - item: {fileID: 11400000, guid: cf699d79edc65bf4d87ba7ed08af119b, type: 2}
+    amnt: 2

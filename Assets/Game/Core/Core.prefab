@@ -177,7 +177,7 @@ MonoBehaviour:
   rotationDegrees: 10
   scrollSpeed: 4
   maxZoom: 25
-  minZoom: 10
+  minZoom: 4
   zoom: 16
   vcam: {fileID: 736827113723707297}
 --- !u!1001 &184598390805940979
@@ -190,22 +190,22 @@ PrefabInstance:
     - target: {fileID: 627811352493948480, guid: c9c2ba2ac0c36494db86754787834919,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.66396
+      value: 50.65725
       objectReference: {fileID: 0}
     - target: {fileID: 627811352493948480, guid: c9c2ba2ac0c36494db86754787834919,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.723003
+      value: 17.712948
       objectReference: {fileID: 0}
     - target: {fileID: 627811352493948480, guid: c9c2ba2ac0c36494db86754787834919,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.967972
+      value: 14.964439
       objectReference: {fileID: 0}
     - target: {fileID: 627811352493948480, guid: c9c2ba2ac0c36494db86754787834919,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.09904573
+      value: -0.09904574
       objectReference: {fileID: 0}
     - target: {fileID: 627811352493948480, guid: c9c2ba2ac0c36494db86754787834919,
         type: 3}
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 627811352493948480, guid: c9c2ba2ac0c36494db86754787834919,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23911768
+      value: -0.2391177
       objectReference: {fileID: 0}
     - target: {fileID: 627811352493948480, guid: c9c2ba2ac0c36494db86754787834919,
         type: 3}
@@ -357,6 +357,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827113539728808}
     m_Modifications:
+    - target: {fileID: 1358738271417206, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1618136693512946, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
       propertyPath: m_Name
       value: Inventory Canvas
@@ -594,7 +598,7 @@ PrefabInstance:
     - target: {fileID: 224338124537362198, guid: 07dc30b6f1bbb4147acd5fd5555a18f5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -583.95123
+      value: -583.9512
       objectReference: {fileID: 0}
     - target: {fileID: 224338124537362198, guid: 07dc30b6f1bbb4147acd5fd5555a18f5,
         type: 3}
@@ -604,7 +608,7 @@ PrefabInstance:
     - target: {fileID: 224338124537362198, guid: 07dc30b6f1bbb4147acd5fd5555a18f5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00017699678
+      value: 0.00029339013
       objectReference: {fileID: 0}
     - target: {fileID: 224928911778522548, guid: 07dc30b6f1bbb4147acd5fd5555a18f5,
         type: 3}
@@ -1599,7 +1603,7 @@ PrefabInstance:
     - target: {fileID: 9024583621215231384, guid: ce24634363e4c91429cc94a26d44b1c1,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.9125248
+      value: 1.8225324
       objectReference: {fileID: 0}
     - target: {fileID: 9024583621215231385, guid: ce24634363e4c91429cc94a26d44b1c1,
         type: 3}

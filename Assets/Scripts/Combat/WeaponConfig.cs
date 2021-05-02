@@ -14,6 +14,7 @@ namespace RPG.Combat
         [SerializeField] Weapon equippedPrefab = null;
         [SerializeField] float weaponDamage = 5f;
         [SerializeField] float percentageBonus = 0f;
+        [SerializeField] float NPCScale = 1f;
         [SerializeField] float weaponRange = 2f;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
@@ -31,6 +32,8 @@ namespace RPG.Combat
                 Transform handTransform = GetTransform(rightHand, leftHand);
                 weapon = Instantiate(equippedPrefab, handTransform);
                 weapon.gameObject.name = weaponName;
+                if (animator.gameObject.tag != "Player")
+                    weapon.transform.localScale = new Vector3(NPCScale,NPCScale,NPCScale);
             }
 
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
