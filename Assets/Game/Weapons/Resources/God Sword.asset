@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef35b80426842243a2b07c7db0f841f, type: 3}
+  m_Name: God Sword
+  m_EditorClassIdentifier: 
+  itemID: d3d9e0ec-07ab-4795-ba21-0de930cec5f7
+  displayName: God Sword
+  description: A godly blade.
+  icon: {fileID: 21300000, guid: 4ab6ac082435114409df52bf83416a9a, type: 3}
+  pickup: {fileID: 2690601011857517588, guid: f2181dd22012fd24ba10c19a9372dfc0, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
+  animatorOverride: {fileID: 22100000, guid: 3237df57ccc706647be1d09d052eba09, type: 2}
+  equippedPrefab: {fileID: 114747334253914422, guid: f27d93bf51222fc4e9402a1529c22768,
+    type: 3}
+  weaponDamage: 666
+  percentageBonus: 666
+  NPCScale: 1
+  weaponRange: 2
+  isRightHanded: 1
+  isTwoHanded: 0
+  projectile: {fileID: 0}

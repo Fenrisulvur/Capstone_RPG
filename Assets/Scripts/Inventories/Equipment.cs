@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using RPG.Combat;
 
 namespace RPG.Inventories
 {
@@ -23,6 +24,15 @@ namespace RPG.Inventories
         /// </summary>
         public event Action equipmentUpdated;
 
+        Inventory inventory;
+
+        private void Awake() {
+            inventory = GetComponent<Inventory>();
+        }
+
+        private void Start() {
+            equipmentUpdated();
+        }
         /// <summary>
         /// Return the item in the given equip location.
         /// </summary>
@@ -43,7 +53,7 @@ namespace RPG.Inventories
         public void AddItem(EquipLocation slot, EquipableItem item)
         {
             Debug.Assert(item.GetAllowedEquipLocation() == slot);
-
+            if (!HandleTwoHandersAndShield(slot, item)) return;
             equippedItems[slot] = item;
 
             if (equipmentUpdated != null)
@@ -51,6 +61,40 @@ namespace RPG.Inventories
                 equipmentUpdated();
             }
         }
+
+        private bool HandleTwoHandersAndShield(EquipLocation slot, EquipableItem item)
+        {
+            if (item is WeaponConfig weapon )
+            {
+                if (weapon.IsTwoHanded())
+                {
+                    if (GetItemInSlot(EquipLocation.Shield) != null)
+                    {
+                        if (inventory.FindEmptySlot() == -1) return false;
+                        ReturnToInventory(EquipLocation.Shield, inventory.FindEmptySlot());
+                        equippedItems[EquipLocation.Shield] = null;
+                        return true;
+                    }
+                }
+            }
+            if (slot == EquipLocation.Shield)
+            {
+                if (GetItemInSlot(EquipLocation.Weapon) != null && GetItemInSlot(EquipLocation.Weapon) is WeaponConfig equippedWep && equippedWep.IsTwoHanded())
+                {
+                    if (inventory.FindEmptySlot() == -1) return false;
+                    ReturnToInventory(EquipLocation.Weapon, inventory.FindEmptySlot());
+                    equippedItems[EquipLocation.Weapon] = null;
+                    return true;
+                }
+            }
+            return true;
+        }
+
+        public void ReturnToInventory(EquipLocation equipLoc, int index)
+        {
+            inventory.AddItemToSlot(index, GetItemInSlot(equipLoc), 1);
+        }
+
 
         /// <summary>
         /// Remove the item for the given slot.

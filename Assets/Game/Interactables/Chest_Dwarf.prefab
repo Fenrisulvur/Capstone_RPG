@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hinge: {fileID: 2207535396199105734}
   closedRot: 0
-  openRot: -90
+  openRot: 90
   overridePosition: {fileID: 1170273392408100082}
 --- !u!65 &7565796817091973201
 BoxCollider:
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scatterDistance: 1
   dropLibrary: {fileID: 11400000, guid: 4d62fca133547e141b03d1eba63027dd, type: 2}
+  alwaysDropLibrary: {fileID: 0}
 --- !u!114 &7103474367718921283
 MonoBehaviour:
   m_ObjectHideFlags: 0

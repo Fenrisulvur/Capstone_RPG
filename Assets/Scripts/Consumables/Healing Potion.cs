@@ -19,7 +19,7 @@ namespace RPG.Consumables
             Debug.Log("Using Healing Potion");
             Health health = user.GetComponent<Health>();
             if (!health) return;
-            
+             
             Debug.Log("Healing");
             if (isPercentage)
             {

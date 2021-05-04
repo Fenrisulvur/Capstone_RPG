@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Minor Healing Potion
   m_EditorClassIdentifier: Assembly-CSharp:RPG.Consumables:HealingPotion
-  itemID: 67348045-9ccd-4d47-8077-ddfbffd14247
+  itemID: 035277f2-81f9-49e2-b13a-fea5c88b80a6
   displayName: Minor Healing Potion
-  description: Heals 80 HP
+  description: Heals for 80 health
   icon: {fileID: 21300000, guid: aba0f700d91d4fc4fa8c724899ab04ab, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 1

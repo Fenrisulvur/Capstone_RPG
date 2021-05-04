@@ -8,6 +8,7 @@ using RPG.Stats;
 using System.Collections.Generic;
 using RPG.Utils;
 using RPG.Inventories;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
@@ -15,13 +16,17 @@ namespace RPG.Combat
     {
         
         [SerializeField] float attackDelay = 1f;
+        [SerializeField] float verbalPhraseDelay = 60f;
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform lefttHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
-    
+
+        [SerializeField] UnityEvent onPhrase;
+
         Health target;
         Equipment equipment;
         float timeSinceLastAttack = Mathf.Infinity;
+        float timeSinceLastPhrase = 0;
         WeaponConfig currentWeaponConfig;
         LazyValue<Weapon> currentWeapon;
 
@@ -31,7 +36,7 @@ namespace RPG.Combat
             equipment = GetComponent<Equipment>();
             if (equipment)
             {
-                equipment.equipmentUpdated += UpdateWeapon;
+                equipment.equipmentUpdated += UpdateItems;
             }
         }
 
@@ -50,63 +55,35 @@ namespace RPG.Combat
 
             if (target == null) return;
             if (target.IsDead()) return;
+            timeSinceLastPhrase += Time.deltaTime;
+
+            if (timeSinceLastPhrase > verbalPhraseDelay)
+            {
+                onPhrase.Invoke();
+                timeSinceLastPhrase = 0;
+            }
 
             if (!GetIsInRange(target.transform))
             {
                 GetComponent<Mover>().MoveTo(target.transform.position, 1f);
                 return;
             }
-            // if( GetIsInRange(target.transform) && !IsLOS(target.gameObject))
-            // {
-            //     GetComponent<Mover>().MoveTo(target.transform.position, 1f);
-            //     return;
-            // }
+
             
             GetComponent<Mover>().Cancel();
             AttackBehaviour();
             
         }
 
-        private bool IsLOS(GameObject target)
-        {
-            float distance = 1000.0f; // how far they can see the target
-            float arc = 45.0f; // their field of view
-            float heightOffet = 1.7f;
-
-            if (Vector3.Distance(transform.position, target.transform.position) < distance)
-            {
-                if (Vector3.Distance(transform.position, target.transform.position) < 4 ) return true;
-                // enemy is within distance
-
-                if (Vector3.Dot(transform.forward, target.transform.position) > 0 && Vector3.Angle(transform.forward, target.transform.position) < arc)
-                {
-                    // enemy is ahead of me and in my field of view
-                    RaycastHit hitInfo;
-
-                    Debug.DrawRay(transform.position + new Vector3(0, heightOffet, 0), ((target.transform.position + new Vector3(0, heightOffet, 0)) - (transform.position + new Vector3(0, heightOffet, 0))) * 1000, Color.yellow);
-                    if (Physics.SphereCast(transform.position + new Vector3(0, heightOffet, 0), .2f, (target.transform.position + new Vector3(0, heightOffet, 0)) - ( transform.position + new Vector3(0, heightOffet, 0) ), out hitInfo) == true)
-                    {
-                        
-                        // we hit SOMETHING, not necessarily a player
-                        if (hitInfo.collider.gameObject.tag == "Player" || hitInfo.collider.gameObject.tag == "Enemy")
-                            return true;
-                    }
-                }
-            }
-
-            return false;
-
-        }
-
         public void EquipWeapon(WeaponConfig weapon)
         {
             currentWeaponConfig = weapon;
             currentWeapon.value = AttachWeapon(weapon);
-
         }
 
-        private void UpdateWeapon()
+        private void UpdateItems()
         {
+            if (GetComponent<Health>().GetHealthValue() > GetComponent<Health>().GetHealthMaxValue()) GetComponent<Health>().StabilizeHealthOverflow();
             var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
             if (weapon == null)
             {
@@ -173,6 +150,24 @@ namespace RPG.Combat
         {
             Hit();
         }
+
+
+        void Draw()
+        {
+            if (currentWeapon.value != null)
+            {
+                currentWeapon.value.OnDraw();
+            }
+        }
+
+        void Swing()
+        {
+            if (currentWeapon.value != null)
+            {
+                currentWeapon.value.OnSwing();
+            }
+        }
+
 
         private bool GetIsInRange(Transform targetTransform)
         {

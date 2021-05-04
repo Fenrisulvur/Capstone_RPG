@@ -11,7 +11,7 @@ namespace RPG.Interactables
     {
         [SerializeField] Transform hinge = null;
         [SerializeField] float closedRot = 0;
-        [SerializeField] float openRot = -90;
+        [SerializeField] float openRot = 90;
         [SerializeField] Transform overridePosition = null;
 
         bool opened = false;
@@ -19,9 +19,9 @@ namespace RPG.Interactables
         private IEnumerator open()
         {
             opened = true;
-            for (int i = 0; i < 90; i++)
+            for (int i = 0; i < openRot; i++)
             {
-                hinge.transform.localRotation = Quaternion.Euler(-i, 0, 90);
+                hinge.transform.localRotation = Quaternion.Euler(-i, 0, openRot);
                 yield return new WaitForSeconds(0);
             }
             yield return new WaitForSeconds(0);

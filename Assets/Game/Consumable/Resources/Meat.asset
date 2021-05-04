@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Meat
   m_EditorClassIdentifier: Assembly-CSharp:RPG.Consumables:HealingPotion
-  itemID: 223aaa68-8d81-4317-9464-80f32759a2ef
-  displayName: Beef Jerky
-  description: Tasty snack. +10 HP
+  itemID: 187750bc-f918-4a13-b154-5759fe8df745
+  displayName: Meat
+  description: A chunk of meat. Heals for 20 health.
   icon: {fileID: 21300000, guid: 4a39cb4b272639541b7bd5ac0649acf7, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 1

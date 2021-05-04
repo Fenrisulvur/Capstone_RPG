@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chest_Dwarf_Loot
   m_EditorClassIdentifier: 
   potentialDrops:
-  - item: {fileID: 11400000, guid: 44995afa20952434a9da57a822f4f2f1, type: 2}
+  - item: {fileID: 11400000, guid: 62f5c74ea7480214888445517423e1cb, type: 2}
     relativeChance:
     - 100
     minNumber: 01000000

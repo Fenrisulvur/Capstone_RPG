@@ -6,7 +6,7 @@ using RPG.Core.UI.Dragging;
 
 namespace RPG.UI.Inventories
 {
-    public class InventorySlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>
+    public class InventorySlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>, IPointerClickHandler
     {
         // CONFIG DATA
         [SerializeField] InventoryItemIcon icon = null;
@@ -52,6 +52,31 @@ namespace RPG.UI.Inventories
         public void RemoveItems(int number)
         {
             inventory.RemoveFromSlot(index, number);
+        }
+
+        public void AttemptUse()
+        {
+            var player = GameObject.FindGameObjectWithTag("Player");
+            Equipment playerEquipment = playerEquipment = player.GetComponent<Equipment>();
+            if (inventory.GetItemInSlot(index) is EquipableItem equipable)
+            {
+
+                EquipableItem swapItem = (EquipableItem)playerEquipment.GetItemInSlot(equipable.GetAllowedEquipLocation());
+                playerEquipment.AddItem(equipable.GetAllowedEquipLocation(), equipable);
+                inventory.RemoveFromSlot(index, 1);
+                if (swapItem)
+                {
+                    inventory.AddItemToSlot(index, swapItem, 1);
+                }
+
+
+            }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Right)
+                AttemptUse();
         }
     }
 }

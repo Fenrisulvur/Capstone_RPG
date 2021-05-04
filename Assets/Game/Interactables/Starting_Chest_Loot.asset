@@ -15,7 +15,7 @@ MonoBehaviour:
   Drops:
   - item: {fileID: 11400000, guid: 432ecccfadac77945be2326f626b3550, type: 2}
     amnt: 1
-  - item: {fileID: 11400000, guid: b26f66e4eb54f0346abc5998f1b2df5b, type: 2}
+  - item: {fileID: 11400000, guid: 63c2fd43661fc284a9082beb825d37af, type: 2}
     amnt: 25
   - item: {fileID: 11400000, guid: e6c48400150ab7b43aa2df523b44257d, type: 2}
     amnt: 1
@@ -33,5 +33,5 @@ MonoBehaviour:
     amnt: 0
   - item: {fileID: 11400000, guid: c09b6dd8286acf04abb62621d2e2b394, type: 2}
     amnt: 0
-  - item: {fileID: 11400000, guid: cf699d79edc65bf4d87ba7ed08af119b, type: 2}
+  - item: {fileID: 11400000, guid: 05733d4e6d4d4f34fba4e401a91cee0e, type: 2}
     amnt: 2

@@ -5,6 +5,7 @@ using RPG.Movement;
 using RPG.Attributes;
 using RPG.Utils;
 using System;
+using UnityEngine.Events;
 
 namespace RPG.Control
 {
@@ -24,7 +25,9 @@ namespace RPG.Control
         Health health;
         GameObject player;
         Mover mover;
-        
+        bool aggrod = false;
+        [SerializeField] UnityEvent onAggro;
+
         LazyValue<Vector3> guardPosition;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceArrivedAtWaypoint = Mathf.Infinity;
@@ -55,7 +58,11 @@ namespace RPG.Control
 
             if (IsAggrevated() && fighter.CanAttack(player))
             {
-                //print(gameObject.name + " Giving chase");
+                if (!aggrod) 
+                {
+                    onAggro.Invoke();
+                    aggrod = true;
+                }
                 timeSinceLastSawPlayer = 0;
                 AttackBehaviour();
             }
@@ -66,6 +73,7 @@ namespace RPG.Control
             }
             else
             {
+                aggrod = false;
                 PatrolBehaviour();
             }
 
@@ -74,6 +82,7 @@ namespace RPG.Control
 
         public void Aggrevate()
         {
+            
             timeSinceAggrevated = 0;
         }
 

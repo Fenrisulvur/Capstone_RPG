@@ -13,6 +13,7 @@ namespace RPG.Attributes
         [SerializeField] float regenerationPercentage = 70;
         [SerializeField] TakeDamageEvent takeDamage;
         [SerializeField] UnityEvent onDie;
+        [SerializeField] UnityEvent onMitigateDamage;
 
         [System.Serializable]
         public class TakeDamageEvent : UnityEvent<float>
@@ -20,6 +21,7 @@ namespace RPG.Attributes
 
         }
 
+        
         LazyValue<float> healthPoints;
         bool isDead = false;
 
@@ -75,17 +77,32 @@ namespace RPG.Attributes
         {
             return isDead;
         }
-
+        
+        public void StabilizeHealthOverflow()
+        {
+            healthPoints.value = GetHealthMaxValue();
+        }
 
         public void TakeDamage(GameObject instigator, float damage)
         {
-            //print(gameObject.name + " took damage: " + damage);
+            if (IsDead()) return;
+            float blockChance = GetComponent<BaseStats>().GetStat(Stat.Block) - 1;
+            float blockRoll = UnityEngine.Random.value;
+            Debug.Log("Block chance: "+blockChance+" Block Roll: "+ blockRoll );
+            if (blockChance > blockRoll) 
+            {
+              takeDamage.Invoke(0);
+              onMitigateDamage.Invoke();
+              return;
+            }
+            
+
             healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
             takeDamage.Invoke(damage);
             if (healthPoints.value == 0)
             {
-                onDie.Invoke();
                 Die();
+                onDie.Invoke();
                 AwardExperience(instigator);
             }
         }

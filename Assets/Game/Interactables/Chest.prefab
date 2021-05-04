@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hinge: {fileID: 3506012428806198532}
   closedRot: 0
-  openRot: -90
+  openRot: 90
   overridePosition: {fileID: 5761904681893188350}
 --- !u!1 &3590844502291709061
 GameObject:

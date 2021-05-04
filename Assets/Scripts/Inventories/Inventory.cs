@@ -161,6 +161,22 @@ namespace RPG.Inventories
             return true;
         }
 
+        /// <summary>
+        /// Find an empty slot.
+        /// </summary>
+        /// <returns>-1 if all slots are full.</returns>
+        public int FindEmptySlot()
+        {
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (slots[i].item == null)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        
         // PRIVATE
 
         private void Awake()
@@ -182,21 +198,6 @@ namespace RPG.Inventories
             return i;
         }
 
-        /// <summary>
-        /// Find an empty slot.
-        /// </summary>
-        /// <returns>-1 if all slots are full.</returns>
-        private int FindEmptySlot()
-        {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                if (slots[i].item == null)
-                {
-                    return i;
-                }
-            }
-            return -1;
-        }
 
         /// <summary>
         /// Find an existing stack of this item type.

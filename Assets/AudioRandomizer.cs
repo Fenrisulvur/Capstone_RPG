@@ -28,6 +28,6 @@ public class AudioRandomizer : MonoBehaviour
         }
 
         audioSource.pitch = Random.Range(0.9f, 1.1f);
-        audioSource.Play();
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }

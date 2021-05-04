@@ -22,7 +22,6 @@ namespace RPG.Consumables
             if (potionUseFX == null) return;
             Debug.Log("Applying FX");
             Instantiate(potionUseFX, user.transform);
-
         }
     }
 

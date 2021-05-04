@@ -75,6 +75,9 @@ MonoBehaviour:
       - 272000
       - 306000
       - 342000
+    - stat: 4
+      levels:
+      - 1
   - characterClass: 1
     stats:
     - stat: 0
@@ -137,6 +140,9 @@ MonoBehaviour:
       - 680
       - 720
       - 760
+    - stat: 4
+      levels:
+      - 1
   - characterClass: 3
     stats:
     - stat: 0
@@ -199,6 +205,9 @@ MonoBehaviour:
       - 544
       - 576
       - 608
+    - stat: 4
+      levels:
+      - 1
   - characterClass: 2
     stats:
     - stat: 0
@@ -261,6 +270,9 @@ MonoBehaviour:
       - 544
       - 576
       - 608
+    - stat: 4
+      levels:
+      - 1
   - characterClass: 5
     stats:
     - stat: 0
@@ -323,6 +335,9 @@ MonoBehaviour:
       - 576
       - 608
       - 632
+    - stat: 4
+      levels:
+      - 1
   - characterClass: 4
     stats:
     - stat: 0
@@ -349,23 +364,6 @@ MonoBehaviour:
       - 95
       - 100
       - 105
-    - stat: 1
+    - stat: 4
       levels:
-      - 600
-      - 900
-      - 1200
-      - 1500
-      - 1900
-      - 2200
-      - 2500
-      - 2800
-      - 3100
-      - 3400
-      - 3700
-      - 4000
-      - 4300
-      - 4600
-      - 4900
-      - 5200
-      - 5500
-      - 5800
+      - 1

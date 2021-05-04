@@ -5,6 +5,11 @@ namespace RPG.Stats
         Health, 
         ExperienceReward,
         ExperienceToLevel,
-        Damage
+        Damage,
+        Block,
+        Agility,
+        Strength,
+        Intellect,
+        Mana,
     }
 }
