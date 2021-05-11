@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
 using RPG.Combat;
+using RPG.UI;
 
 namespace RPG.Inventories
 {
@@ -52,8 +53,13 @@ namespace RPG.Inventories
         /// </summary>
         public void AddItem(EquipLocation slot, EquipableItem item)
         {
+            if (item != null && !CanHandleSwap(slot, item))
+            {
+                GetComponent<AlertPopup>().Send("You can not equip a shield and a two hander.");
+                inventory.AddToFirstEmptySlot(item, 1);
+                return;
+            }    
             Debug.Assert(item.GetAllowedEquipLocation() == slot);
-            if (!HandleTwoHandersAndShield(slot, item)) return;
             equippedItems[slot] = item;
 
             if (equipmentUpdated != null)
@@ -62,32 +68,32 @@ namespace RPG.Inventories
             }
         }
 
-        private bool HandleTwoHandersAndShield(EquipLocation slot, EquipableItem item)
+        public bool CanHandleSwap(EquipLocation slot, EquipableItem item)
         {
-            if (item is WeaponConfig weapon )
+            if (slot != EquipLocation.Weapon && slot != EquipLocation.Shield) return true;
+
+            if (slot == EquipLocation.Weapon && item is WeaponConfig aweapon && aweapon.IsTwoHanded() && GetItemInSlot(EquipLocation.Shield) == null)
             {
-                if (weapon.IsTwoHanded())
-                {
-                    if (GetItemInSlot(EquipLocation.Shield) != null)
-                    {
-                        if (inventory.FindEmptySlot() == -1) return false;
-                        ReturnToInventory(EquipLocation.Shield, inventory.FindEmptySlot());
-                        equippedItems[EquipLocation.Shield] = null;
-                        return true;
-                    }
-                }
+                return true;
             }
-            if (slot == EquipLocation.Shield)
+
+            if (slot == EquipLocation.Weapon && item is WeaponConfig cweapon && !cweapon.IsTwoHanded())
             {
-                if (GetItemInSlot(EquipLocation.Weapon) != null && GetItemInSlot(EquipLocation.Weapon) is WeaponConfig equippedWep && equippedWep.IsTwoHanded())
-                {
-                    if (inventory.FindEmptySlot() == -1) return false;
-                    ReturnToInventory(EquipLocation.Weapon, inventory.FindEmptySlot());
-                    equippedItems[EquipLocation.Weapon] = null;
-                    return true;
-                }
+                return true;
             }
-            return true;
+
+            if (slot == EquipLocation.Shield && GetItemInSlot(EquipLocation.Weapon) is WeaponConfig bweapon && !bweapon.IsTwoHanded())
+            {
+                return true;
+            }
+
+            if (slot == EquipLocation.Shield && GetItemInSlot(EquipLocation.Weapon) == null)
+            {
+                return true;
+            }
+
+            return false;
+
         }
 
         public void ReturnToInventory(EquipLocation equipLoc, int index)

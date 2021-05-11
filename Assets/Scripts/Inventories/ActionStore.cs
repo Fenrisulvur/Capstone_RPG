@@ -78,6 +78,7 @@ namespace RPG.Inventories
                 slot.number = number;
                 dockedItems[index] = slot;
             }
+
             if (storeUpdated != null)
             {
                 storeUpdated();
@@ -94,8 +95,11 @@ namespace RPG.Inventories
         {
             if (dockedItems.ContainsKey(index))
             {
+                if (!dockedItems[index].item.CanUse(gameObject)) return false;
                 dockedItems[index].item.Use(user);
-                if (dockedItems[index].item.isConsumable())
+
+
+                if (dockedItems[index].item.IsConsumable())
                 {
                     RemoveItems(index, 1);
                 }
@@ -115,11 +119,12 @@ namespace RPG.Inventories
                 if (dockedItems[index].number <= 0)
                 {
                     dockedItems.Remove(index);
+
                 }
                 if (storeUpdated != null)
                 {
                     storeUpdated();
-                }
+                } 
             }
             
         }
@@ -141,7 +146,7 @@ namespace RPG.Inventories
             {
                 return 0;
             }
-            if (actionItem.isConsumable())
+            if (actionItem.IsConsumable())
             {
                 return int.MaxValue;
             }

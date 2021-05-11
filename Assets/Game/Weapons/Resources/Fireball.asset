@@ -27,5 +27,6 @@ MonoBehaviour:
   NPCScale: 1
   weaponRange: 20
   isRightHanded: 1
+  isTwoHanded: 1
   projectile: {fileID: 8689795478661263774, guid: 1863e63c62228f949b85a26c9b562316,
     type: 3}

@@ -234,6 +234,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -245,6 +247,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -257,6 +260,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &556236539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +334,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6275846593020972489}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Spawn
         m_Mode: 0
         m_Arguments:
@@ -341,6 +346,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7490239732929597115}
+        m_TargetAssemblyTypeName: 
         m_MethodName: PlayRandomClip
         m_Mode: 1
         m_Arguments:
@@ -355,6 +361,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1887776673324954673}
+        m_TargetAssemblyTypeName: 
         m_MethodName: PlayRandomClip
         m_Mode: 1
         m_Arguments:
@@ -369,6 +376,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8166082081206244473}
+        m_TargetAssemblyTypeName: 
         m_MethodName: PlayRandomClip
         m_Mode: 1
         m_Arguments:
@@ -656,7 +664,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.865
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -801,7 +809,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.461
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1058,6 +1066,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1073,6 +1086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1084,16 +1102,6 @@ PrefabInstance:
     - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905611450669939670, guid: 1f49efa275109e247a3f0246f376d956,

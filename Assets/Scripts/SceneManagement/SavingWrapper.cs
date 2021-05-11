@@ -44,17 +44,21 @@ namespace RPG.SceneManagement
 
         public void Load()
         {
-            GetComponent<SavingSystem>().Load(defaultSaveFile);
+            //GetComponent<SavingSystem>().Load(defaultSaveFile);
+            StartCoroutine(LoadLastScene());
+            Debug.Log("Manual load");
         }
 
         public void Save()
         {
             GetComponent<SavingSystem>().Save(defaultSaveFile);
+            Debug.Log("Manual save");
         }
 
         public void Delete()
         {
             GetComponent<SavingSystem>().Delete(defaultSaveFile);
+            Debug.Log("Manual delete");
         }
     }
 }

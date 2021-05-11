@@ -122,6 +122,7 @@ namespace RPG.Attributes
 
         private void Die()
         {
+            print("ded "+gameObject.name);
             if (isDead) return;
             isDead = true;
             GetComponent<Animator>().SetTrigger("die");
@@ -139,7 +140,13 @@ namespace RPG.Attributes
 
             if (healthPoints.value == 0)
             {
-                Die();
+                Invoke("Die",.1f);
+            }
+            else
+            {
+                isDead = false;
+                GetComponent<ActionScheduler>().CancelCurrentAction();
+                GetComponent<Animator>().ResetTrigger("die");
             }
         }
     }

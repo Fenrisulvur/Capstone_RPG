@@ -58,7 +58,7 @@ namespace RPG.UI.Inventories
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             Equipment playerEquipment = playerEquipment = player.GetComponent<Equipment>();
-            if (inventory.GetItemInSlot(index) is EquipableItem equipable)
+            if (inventory.GetItemInSlot(index) is EquipableItem equipable && playerEquipment.CanHandleSwap(equipable.GetAllowedEquipLocation() , equipable))
             {
 
                 EquipableItem swapItem = (EquipableItem)playerEquipment.GetItemInSlot(equipable.GetAllowedEquipLocation());
@@ -69,7 +69,10 @@ namespace RPG.UI.Inventories
                     inventory.AddItemToSlot(index, swapItem, 1);
                 }
 
-
+            }
+            else
+            {
+                player.GetComponent<AlertPopup>().Send("You can not equip a shield and a two hander.");
             }
         }
 

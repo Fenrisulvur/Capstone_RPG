@@ -24,7 +24,9 @@ MonoBehaviour:
     type: 3}
   weaponDamage: 0
   percentageBonus: 0
+  NPCScale: 1
   weaponRange: 20
   isRightHanded: 0
+  isTwoHanded: 1
   projectile: {fileID: 2942546765517968948, guid: d8cb97d88461a17409b7f44fec603fff,
     type: 3}

@@ -168,6 +168,15 @@ namespace RPG.Combat
             }
         }
 
+        void FootL()
+        {
+            
+        }
+        
+        void FootR()
+        {
+
+        }
 
         private bool GetIsInRange(Transform targetTransform)
         {

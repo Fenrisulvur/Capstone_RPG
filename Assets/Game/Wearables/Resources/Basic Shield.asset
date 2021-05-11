@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8e882de32692d4a8fd2b0228c140c6, type: 3}
+  m_Name: Basic Shield
+  m_EditorClassIdentifier: 
+  itemID: c974eead-5511-4c0b-aa5c-4d66e5359272
+  displayName: Basic Shield
+  description: 'A old, trusty shield. '
+  icon: {fileID: 21300000, guid: 886ffb608498aa04c9c0913d5ac3c394, type: 3}
+  pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
+  stackable: 0
+  allowedEquipLocation: 6
+  additiveModifiers: []
+  percentageModifiers:
+  - stat: 4
+    value: 12
+  displayObject: {fileID: 2793429675451852251, guid: ceae7553739c9bf4e8d317089784817b,
+    type: 3}

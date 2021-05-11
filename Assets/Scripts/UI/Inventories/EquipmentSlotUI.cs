@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using RPG.Core.UI.Dragging;
 using RPG.Inventories;
+using UnityEngine.EventSystems;
+using RPG.UI;
 
 namespace RPG.UI.Inventories
 {
     /// <summary>
     /// An slot for the players equipment.
     /// </summary>
-    public class EquipmentSlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>
+    public class EquipmentSlotUI : MonoBehaviour, IItemHolder, IDragContainer<InventoryItem>, IPointerClickHandler
     {
         // CONFIG DATA
 
@@ -42,7 +44,12 @@ namespace RPG.UI.Inventories
             if (equipableItem == null) return 0;
             if (equipableItem.GetAllowedEquipLocation() != equipLocation) return 0;
             if (GetItem() != null) return 0;
-
+            if ( (equipableItem.GetAllowedEquipLocation() == EquipLocation.Weapon || equipableItem.GetAllowedEquipLocation() == EquipLocation.Weapon) && !playerEquipment.CanHandleSwap(equipableItem.GetAllowedEquipLocation(), equipableItem)) 
+            {
+                var player = GameObject.FindGameObjectWithTag("Player");
+                player.GetComponent<AlertPopup>().Send("You can not equip a shield and a two hander.");
+                return 0;
+            }
             return 1;
         }
 
@@ -78,6 +85,23 @@ namespace RPG.UI.Inventories
         void RedrawUI()
         {
             icon.SetItem(playerEquipment.GetItemInSlot(equipLocation));
+        }
+
+        public void AttemptUse()
+        {
+            var player = GameObject.FindGameObjectWithTag("Player");
+            Inventory playerInventory = player.GetComponent<Inventory>();
+            if (GetItem() != null && playerInventory.FindEmptySlot() != -1)
+            {
+                playerInventory.AddItemToSlot(playerInventory.FindEmptySlot(), GetItem(), 1);
+                RemoveItems(1);
+            }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Right)
+                AttemptUse();
         }
     }
 }

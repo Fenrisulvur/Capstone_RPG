@@ -176,7 +176,24 @@ namespace RPG.Inventories
             }
             return -1;
         }
-        
+
+        /// <summary>
+        /// Get empty slots available.
+        /// </summary>
+        /// <returns>Count if of empty slots.</returns>
+        public int CountEmptySlots()
+        {
+            int freeSlotCount = 0;
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (slots[i].item == null)
+                {
+                    return freeSlotCount++;
+                }
+            }
+            return freeSlotCount;
+        }
+
         // PRIVATE
 
         private void Awake()

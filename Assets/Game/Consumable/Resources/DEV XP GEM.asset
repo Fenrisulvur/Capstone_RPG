@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 44116beb402c9a34cad9828b5ad7beef, type: 3}
   m_Name: DEV XP GEM
   m_EditorClassIdentifier: Assembly-CSharp:RPG.Consumables:EXPPotion
-  itemID: faf8c6ad-b470-4bbe-bfb5-6a50a4a2866a
-  displayName: DEV XP GEM
-  description: Gain 20,000XP
-  icon: {fileID: 21300000, guid: 81eb7b507d1d84949b52ed597a23243c, type: 3}
+  itemID: 7f400aa0-0681-4f85-9ba2-dad04b47dfef
+  displayName: DEV XP BOOK
+  description: Use to gain 20,000 experience.
+  icon: {fileID: 21300000, guid: ae496f5dad56ea645b72d374a0376368, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 0
   consumable: 0
