@@ -33,7 +33,10 @@ namespace RPG.Combat
             foreach (Collider hit in collisions)
             {
                 if (hit.gameObject.tag != "Player" && !playerCasted || playerCasted && hit.gameObject.tag == "Player") continue;
-                hit.GetComponent<Health>().TakeDamage(gameObject, damage);
+                if (hit.GetComponent<Health>())
+                {
+                    hit.GetComponent<Health>().TakeDamage(gameObject, damage);
+                }
             }
         }
 

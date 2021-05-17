@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef35b80426842243a2b07c7db0f841f, type: 3}
-  m_Name: Spear
+  m_Name: Dwarf Halberd
   m_EditorClassIdentifier: 
-  itemID: 2a0d4a2f-e957-4b37-853f-bf6de692576b
-  displayName: Halberd
-  description: Rusty Halberd
-  icon: {fileID: 21300000, guid: 799c962e0f9285444b77481f36d0f3b7, type: 3}
+  itemID: 82ed6980-fd4a-454e-86cf-41f2ef0ba1a7
+  displayName: Dwarven Halberd
+  description: A Dwarven Halberd
+  icon: {fileID: 21300000, guid: cd8bf42db71b4204eb6e2a0626f139c7, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 0
   allowedEquipLocation: 5
   animatorOverride: {fileID: 22100000, guid: 16062a05613fdb6428afa19f30eb32bf, type: 2}
-  equippedPrefab: {fileID: 114747334253914422, guid: cec06a6dbca27da4fa66b55d68a75433,
+  equippedPrefab: {fileID: 114747334253914422, guid: 91ebfee2846d3a54a904476b2549dea8,
     type: 3}
   weaponDamage: 12
   percentageBonus: 15
-  NPCScale: 100
+  NPCScale: 1.3
   weaponRange: 2
   isRightHanded: 1
   isTwoHanded: 1

@@ -13,6 +13,7 @@ namespace RPG.Control
     {
         Health health;
         ActionStore actionStore;
+        Fighter fighter;
         
 
         [System.Serializable]
@@ -34,6 +35,7 @@ namespace RPG.Control
         private void Awake() {
             health = GetComponent<Health>();
             actionStore = GetComponent<ActionStore>();
+            fighter = GetComponent<Fighter>();
         }
 
         private void Update()
@@ -48,6 +50,16 @@ namespace RPG.Control
             if (InteractWithMovement()) return;
             //print("Nothing to do.");
             SetCursor(CursorType.None);
+        }
+
+        void OnEnable()
+        {
+            health.OnDamageTakenEvent += OnDamageTaken;
+        }
+
+        void OnDisable()
+        {
+            health.OnDamageTakenEvent -= OnDamageTaken;
         }
 
         private bool InteractWithComponent()
@@ -133,6 +145,13 @@ namespace RPG.Control
             return hits;
         }
 
+        void OnDamageTaken(GameObject other)
+        {
+            if (fighter.HasTarget())
+                return;
+            fighter.Attack(other);
+
+        }
 
         private void SetCursor(CursorType type)
         {

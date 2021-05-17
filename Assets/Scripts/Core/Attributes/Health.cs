@@ -14,6 +14,9 @@ namespace RPG.Attributes
         [SerializeField] TakeDamageEvent takeDamage;
         [SerializeField] UnityEvent onDie;
         [SerializeField] UnityEvent onMitigateDamage;
+        
+        public delegate void OnDamageTaken(GameObject attacker);
+        public event OnDamageTaken OnDamageTakenEvent;
 
         [System.Serializable]
         public class TakeDamageEvent : UnityEvent<float>
@@ -99,6 +102,7 @@ namespace RPG.Attributes
 
             healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
             takeDamage.Invoke(damage);
+            OnDamageTakenEvent?.Invoke(instigator);
             if (healthPoints.value == 0)
             {
                 Die();

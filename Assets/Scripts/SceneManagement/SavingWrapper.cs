@@ -44,9 +44,13 @@ namespace RPG.SceneManagement
 
         public void Load()
         {
-            //GetComponent<SavingSystem>().Load(defaultSaveFile);
-            StartCoroutine(LoadLastScene());
+            GetComponent<SavingSystem>().Load(defaultSaveFile);
             Debug.Log("Manual load");
+        }
+
+        public void Reload()
+        {
+            StartCoroutine(LoadLastScene());
         }
 
         public void Save()

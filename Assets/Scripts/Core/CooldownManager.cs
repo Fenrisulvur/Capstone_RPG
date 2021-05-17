@@ -28,7 +28,7 @@ namespace RPG.Core
                     continue;
                 }
                 
-                timers[kvp.Key] = Mathf.Max(0, timers[kvp.Key] - .2f);
+                timers[kvp.Key] = Mathf.Max(0, timers[kvp.Key] - .1f);
             }
             cooldownTickEvent.Invoke();
         }

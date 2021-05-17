@@ -81,6 +81,15 @@ namespace RPG.Combat
             currentWeapon.value = AttachWeapon(weapon);
         }
 
+        public bool HasTarget()
+        {
+            if (target == null) return false;
+            if (target.IsDead()) return false;
+            return true;
+        }
+
+        
+
         private void UpdateItems()
         {
             if (GetComponent<Health>().GetHealthValue() > GetComponent<Health>().GetHealthMaxValue()) GetComponent<Health>().StabilizeHealthOverflow();

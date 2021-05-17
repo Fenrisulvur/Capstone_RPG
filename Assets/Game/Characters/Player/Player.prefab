@@ -6243,6 +6243,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d020028d7785d624688677161085bc86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4304270104277966094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6090957633939011763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8724e51e1c81b42bb5b3c2e1af385b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  periodicHealAmount: 5
+  periodicHealInterval: 1
 --- !u!114 &4846076309969057717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6296,22 +6310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19ff972ec6859b48870488d7b1e81b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4304270104277966094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6090957633939011763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8724e51e1c81b42bb5b3c2e1af385b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeSinceLastTookDamage: Infinity
-  regenerationRate: 0
-  periodicHealAmount: 5
-  periodicHealInterval: 1
 --- !u!1 &9197030089051079013
 GameObject:
   m_ObjectHideFlags: 0
@@ -9454,6 +9452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: healthPoints
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114716963809253908, guid: 602087e5ada69494498153ba0b599a09,
+        type: 3}
+      propertyPath: regenerationPercentage
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2542059172312490782, guid: 602087e5ada69494498153ba0b599a09,
         type: 3}

@@ -41,7 +41,7 @@ namespace RPG.Combat
         bool isCooldown3 = false;
         public KeyCode ability3;
 
-
+        [SerializeField] GameObject AoEPrefab = null;
 
         // Start is called before the first frame update
         void Start()
@@ -112,6 +112,7 @@ namespace RPG.Combat
             {
                 isCooldown = true;
                 abilityImage1.fillAmount = 1;
+
             }
 
             if (isCooldown)
@@ -145,6 +146,7 @@ namespace RPG.Combat
             {
                 isCooldown2 = true;
                 abilityImage2.fillAmount = 1;
+                SpawnAOE(targetCircle.transform.position+new Vector3(0,.1f,0));
             }
 
             if (isCooldown2)
@@ -163,6 +165,18 @@ namespace RPG.Combat
                 }
             }
         }
+
+        protected void SpawnAOE(Vector3 pos)
+        {
+            GameObject aoeObject = Instantiate(AoEPrefab, pos, Quaternion.identity);
+            AoE aoe = aoeObject.GetComponent<AoE>();
+            aoe.SetData(true, gameObject, 50);
+        }
+
+
+
+
+
 
         void Ability3()
         {

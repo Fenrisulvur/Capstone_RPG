@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b69bdb72872f64cbd0c21f79670fff, type: 3}
+  m_Name: Test Directional Spell
+  m_EditorClassIdentifier: 
+  itemID: 7f543a46-2e0f-4123-bd1b-dfaacef5a681
+  displayName: Directional Spell
+  description: Test directional spell
+  icon: {fileID: 21300000, guid: 4622c72801961084b942caad1cb99006, type: 3}
+  pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
+  stackable: 0
+  consumable: 0
+  cooldown: 10
+  dmg: 80
+  projectile: {fileID: -2766435967701724924, guid: a309de02ee400e944a3cb27b990c35d1,
+    type: 3}
+  maxRange: 20
