@@ -9,6 +9,7 @@ namespace RPG.Control
         Dead,
         Pickup,
         FullPickup,
-        Interactable
+        Interactable,
+        Dialogue
     }
 }

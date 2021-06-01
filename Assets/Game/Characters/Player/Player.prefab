@@ -6177,6 +6177,39 @@ Transform:
   m_Father: {fileID: 3302365039929083285}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4758469913588875838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6090957633939011763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3aa134e59860f64598b48f48d94f1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statuses:
+  - quest: {fileID: 11400000, guid: 30b580d9d35c2ec4b84da5717a3b09b8, type: 2}
+    completedObjectives:
+    - 1
+    - 2
+  - quest: {fileID: 11400000, guid: f15792c53d9635a40b587ad416d39917, type: 2}
+    completedObjectives:
+    - 1
+--- !u!114 &-3737767163360971293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6090957633939011763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceade6836030e1b44ac068976a44033a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Leeroy Jenkins
 --- !u!114 &114534990233765102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6227,6 +6260,9 @@ MonoBehaviour:
     hotspot: {x: 0, y: 0}
   - type: 7
     texture: {fileID: 2800000, guid: 5556e2a752689744aa76e6a21dea7480, type: 3}
+    hotspot: {x: 0, y: 0}
+  - type: 8
+    texture: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
   raycastRadius: 0.05
@@ -9560,15 +9596,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 602087e5ada69494498153ba0b599a09, type: 3}
---- !u!1 &6090957633939011763 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3406424892840098302, guid: 602087e5ada69494498153ba0b599a09,
-    type: 3}
-  m_PrefabInstance: {fileID: 8917515210402251085}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6378879996775031379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2542059172312490782, guid: 602087e5ada69494498153ba0b599a09,
+    type: 3}
+  m_PrefabInstance: {fileID: 8917515210402251085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6090957633939011763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3406424892840098302, guid: 602087e5ada69494498153ba0b599a09,
     type: 3}
   m_PrefabInstance: {fileID: 8917515210402251085}
   m_PrefabAsset: {fileID: 0}
