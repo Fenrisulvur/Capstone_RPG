@@ -20,6 +20,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e52ea25af699fd445b7046374f81a5b9, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 1
+  price: 50
+  category: 3
   consumable: 1
   cooldown: 10
   healthToHeal: 50

@@ -13,7 +13,7 @@ namespace RPG.Dialogue
         [SerializeField] bool isPlayerSpeaking = false;
         [SerializeField] string text;
         [SerializeField] List<string> children = new List<string>();
-        [SerializeField] Rect rect = new Rect (0, 0, 200, 100);
+        [SerializeField] Rect rect = new Rect (0, 0, 200, 200);
         [SerializeField] Condition condition;
         [SerializeField] string onEnterAction;
         [SerializeField] string onExitAction;
@@ -67,6 +67,26 @@ namespace RPG.Dialogue
             {
                 Undo.RecordObject(this, "Update Dialogue Text");
                 text = newText;
+                EditorUtility.SetDirty(this);
+            }
+        }
+
+        public void SetOnEnterAction(string newAction)
+        {
+            if (newAction != onEnterAction)
+            {
+                Undo.RecordObject(this, "Update onEnterAction");
+                onEnterAction = newAction;
+                EditorUtility.SetDirty(this);
+            }
+        }
+
+        public void SetOnExitAction(string newAction)
+        {
+            if (newAction != onExitAction)
+            {
+                Undo.RecordObject(this, "Update onExitAction");
+                onExitAction = newAction;
                 EditorUtility.SetDirty(this);
             }
         }

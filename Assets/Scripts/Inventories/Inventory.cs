@@ -2,6 +2,7 @@
 using UnityEngine;
 using RPG.Saving;
 using RPG.Core;
+using System.Collections.Generic;
 
 namespace RPG.Inventories
 {
@@ -50,6 +51,39 @@ namespace RPG.Inventories
             return FindSlot(item) >= 0;
         }
 
+        public bool HasSpaceFor(IEnumerable<InventoryItem> items)
+        {
+            int freeSlots = FreeSlots();
+            List<InventoryItem> stackedItems = new List<InventoryItem>();
+            foreach (var item in items)
+            {
+                if (item.IsStackable())
+                {
+                    if (HasItem(item)) continue;
+                    if (stackedItems.Contains(item)) continue;
+                    stackedItems.Add(item);
+                }
+                if (freeSlots <= 0) return false;
+                freeSlots--;
+            }
+            return true;
+        }
+
+        public int FreeSlots()
+        {
+            int count = 0;
+
+            foreach (InventorySlot slot in slots)
+            {
+               if (slot.number == 0)
+               {
+                   count++;
+               } 
+            }
+
+            return count;
+        }
+
         /// <summary>
         /// How many slots are in the inventory?
         /// </summary>
@@ -66,6 +100,11 @@ namespace RPG.Inventories
         /// <returns>Whether or not the item could be added.</returns>
         public bool AddToFirstEmptySlot(InventoryItem item, int number)
         {
+            if (item is CurrencyItem coins)
+            {
+                GetComponent<Purse>().UpdateBalance(number);
+                return true;
+            }
             int i = FindSlot(item);
 
             if (i < 0)

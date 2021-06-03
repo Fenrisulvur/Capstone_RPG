@@ -18,7 +18,10 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e7d29a79bc7fae248887c8a08a160303, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 1
+  price: 200
+  category: 3
   consumable: 1
+  cooldown: 1
   expToGrant: 1500
   isPercentage: 0
   potionUseFX: {fileID: 4376381859893381584, guid: 93c0f566367436e4dab24aa795a1bf3c,

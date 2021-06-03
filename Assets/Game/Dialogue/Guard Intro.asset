@@ -18,10 +18,10 @@ MonoBehaviour:
   - 55a01311-0076-4537-84ec-6090997aa046
   rect:
     serializedVersion: 2
-    x: 292
-    y: 323
+    x: 276
+    y: 268
     width: 200
-    height: 100
+    height: 220
   condition:
     and:
     - or:
@@ -49,14 +49,14 @@ MonoBehaviour:
   m_Name: 55a01311-0076-4537-84ec-6090997aa046
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: You can get them from Billy Bean
+  text: You can get them from Billy Bean. He is  near the cart.
   children: []
   rect:
     serializedVersion: 2
-    x: 521
-    y: 322
+    x: 557
+    y: 258
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
   onEnterAction: 
@@ -74,16 +74,16 @@ MonoBehaviour:
   m_Name: 7ab5b7c0-4eab-467b-8cdc-f1ed7a9dc046
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: There are demons ahead, I suggest you turn back.
+  text: I crave beans!
   children:
   - e7934b77-2500-4682-b0db-a5acbc0e6af7
   - 69ca11c9-42d6-45f6-bef0-e4edfc0a9626
   rect:
     serializedVersion: 2
-    x: 581
-    y: 187
+    x: 559
+    y: 38
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
   onEnterAction: 
@@ -101,17 +101,17 @@ MonoBehaviour:
   m_Name: f5cc3293-56e2-4bbb-8040-23f28f9a07e4
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Scrumptious
+  text: Scrumptious! Take these items as a reward.
   children: []
   rect:
     serializedVersion: 2
-    x: 537
-    y: 471
+    x: 556
+    y: 475
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
-  onEnterAction: 
+  onEnterAction: FinishQuest
   onExitAction: 
 --- !u!114 &-4507137978340099855
 MonoBehaviour:
@@ -131,10 +131,10 @@ MonoBehaviour:
   - 7ab5b7c0-4eab-467b-8cdc-f1ed7a9dc046
   rect:
     serializedVersion: 2
-    x: 286
-    y: 190
+    x: 277
+    y: 55
     width: 200
-    height: 100
+    height: 220
   condition:
     and:
     - or:
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 3b30ca30-d3ca-4bb8-9458-002564b785c5
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Halt!
+  text: Ugh...
   children:
   - e2fade2f-620e-4698-b96a-ccf8c3fa7cb6
   - 6c34b164-67bd-4bd0-a038-8f93cb0299e0
@@ -191,10 +191,10 @@ MonoBehaviour:
   - eb8b64c8-420c-4dfd-bcbe-ca8e884319ec
   rect:
     serializedVersion: 2
-    x: 35
-    y: 315
+    x: 0
+    y: 289
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
   onEnterAction: TestRootEntry
@@ -217,10 +217,10 @@ MonoBehaviour:
   - f5cc3293-56e2-4bbb-8040-23f28f9a07e4
   rect:
     serializedVersion: 2
-    x: 286
-    y: 471
+    x: 275
+    y: 480
     width: 200
-    height: 100
+    height: 220
   condition:
     and:
     - or:
@@ -237,8 +237,13 @@ MonoBehaviour:
         paramaters:
         - 1cbc3820-cbd5-4d4a-88e8-d26a37ed8c1e
         negate: 0
+    - or:
+      - predicate: CompletedQuest
+        paramaters:
+        - Find the missing beans
+        negate: 1
   onEnterAction: 
-  onExitAction: 
+  onExitAction: AcceptBeans
 --- !u!114 &3647430998612927087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,15 +257,15 @@ MonoBehaviour:
   m_Name: 69ca11c9-42d6-45f6-bef0-e4edfc0a9626
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: I can handle them
+  text: Where can I find you some?
   children:
   - f7dd2db5-462b-487c-86d2-f1c87a11f855
   rect:
     serializedVersion: 2
-    x: 835
-    y: 241
+    x: 839
+    y: 273
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
   onEnterAction: 
@@ -278,18 +283,18 @@ MonoBehaviour:
   m_Name: f7dd2db5-462b-487c-86d2-f1c87a11f855
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: Carry on then
+  text: Get some from Billy Bean
   children: []
   rect:
     serializedVersion: 2
-    x: 1121
-    y: 178
+    x: 1104
+    y: 139.25
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
-  onEnterAction: 
-  onExitAction: GiveQuest
+  onEnterAction: GiveQuest
+  onExitAction: 
 --- !u!114 &4732227278215755587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,15 +308,15 @@ MonoBehaviour:
   m_Name: e7934b77-2500-4682-b0db-a5acbc0e6af7
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: Thanks for the warning
+  text: How can I help?
   children:
   - f7dd2db5-462b-487c-86d2-f1c87a11f855
   rect:
     serializedVersion: 2
-    x: 836
-    y: 115
+    x: 843
+    y: 36
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
   onEnterAction: 
@@ -333,10 +338,10 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 565
-    y: 622
+    x: 557
+    y: 693
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
   onEnterAction: 
@@ -359,10 +364,10 @@ MonoBehaviour:
   - c6dc9f4f-50f6-49f3-913c-31980f1c4a6e
   rect:
     serializedVersion: 2
-    x: 284
-    y: 623
+    x: 275
+    y: 697
     width: 200
-    height: 100
+    height: 220
   condition:
     and: []
   onEnterAction: 

@@ -17,6 +17,12 @@ MonoBehaviour:
     description: Go visit Billy Bean
   - reference: 2
     description: Get Beans
+  - reference: 3
+    description: Give Beans to Darius
   rewards:
   - number: 1
     item: {fileID: 11400000, guid: da7653185ebd1a84083b18dbbc91a03c, type: 2}
+  - number: 2
+    item: {fileID: 11400000, guid: e1676aa76464cba4a96500aa370cf6dd, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: 949550307ecf8df46b985f8d52fa2c2c, type: 2}

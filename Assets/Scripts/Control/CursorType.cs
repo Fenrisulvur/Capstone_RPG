@@ -10,6 +10,7 @@ namespace RPG.Control
         Pickup,
         FullPickup,
         Interactable,
-        Dialogue
+        Dialogue,
+        Shop
     }
 }

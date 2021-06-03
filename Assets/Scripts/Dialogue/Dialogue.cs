@@ -17,7 +17,7 @@ namespace RPG.Dialogue
 
 
 
-        private void OnValidate() {
+        public void OnValidate() {
             nodeLookup.Clear();
             foreach (DialogueNode node in GetAllNodes())
             {

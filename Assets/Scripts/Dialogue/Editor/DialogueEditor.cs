@@ -52,7 +52,7 @@ namespace RPG.Dialogue.Editor
 
         private void OnEnable() {
             Selection.selectionChanged += OnSelectionChanged;
-
+            
             nodeStyle = new GUIStyle();
             nodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
             nodeStyle.padding = new RectOffset(20, 20, 20, 20);
@@ -174,7 +174,10 @@ namespace RPG.Dialogue.Editor
             }
 
             GUILayout.BeginArea(node.GetRect(), style);
-            node.SetText(EditorGUILayout.TextField(node.GetText()));
+            EditorGUILayout.PrefixLabel("Dialogue Text");
+            node.SetText(EditorGUILayout.TextArea(node.GetText(), EditorStyles.textArea, GUILayout.Height(40)));
+
+            node.SetPlayerSpeaking(EditorGUILayout.ToggleLeft("IsPlayer?",node.IsPlayerSpeaking()));
 
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("x"))
@@ -187,6 +190,13 @@ namespace RPG.Dialogue.Editor
                 creatingNode = node;
             }
             GUILayout.EndHorizontal();
+
+            EditorGUILayout.PrefixLabel("OnEnterAction");
+            node.SetOnEnterAction(EditorGUILayout.TextField(node.GetOnEnterAction()));
+
+            EditorGUILayout.PrefixLabel("OnExitAction");
+            node.SetOnExitAction(EditorGUILayout.TextField(node.GetOnExitAction()));
+
 
             GUILayout.EndArea();
         }

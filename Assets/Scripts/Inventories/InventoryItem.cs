@@ -27,7 +27,10 @@ namespace RPG.Inventories
         [SerializeField] Pickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
-
+        [Tooltip("Base cost of the item in shops.")]
+        [SerializeField] int price = 0;
+        [Tooltip("Category of the item")]
+        [SerializeField] ItemCategory category = ItemCategory.none;
         // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
 
@@ -103,6 +106,15 @@ namespace RPG.Inventories
             return description;
         }
 
+        public int GetPrice()
+        {
+            return price;
+        }
+
+        public ItemCategory GetCategory()
+        {
+            return category;
+        }
 
         // PRIVATE
 

@@ -15,7 +15,7 @@ public class QuestItemUI : MonoBehaviour
     {
         this.status = status;
         title.text = status.GetQuest().GetTitle();
-        progress.text = status.GetCompletedCount()+"/"+status.GetQuest().GetObjectiveCount();
+        progress.text = Mathf.Min(status.GetCompletedCount(), status.GetQuest().GetObjectiveCount()) +"/"+status.GetQuest().GetObjectiveCount();
         if (status.IsComplete())
         {
             title.fontStyle = FontStyles.Strikethrough;
