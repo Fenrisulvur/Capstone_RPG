@@ -13,7 +13,7 @@ namespace RPG.Dialogue
         [SerializeField] bool isPlayerSpeaking = false;
         [SerializeField] string text;
         [SerializeField] List<string> children = new List<string>();
-        [SerializeField] Rect rect = new Rect (0, 0, 200, 200);
+        [SerializeField] Rect rect = new Rect (0, 0, 200, 220);
         [SerializeField] Condition condition;
         [SerializeField] string onEnterAction;
         [SerializeField] string onExitAction;

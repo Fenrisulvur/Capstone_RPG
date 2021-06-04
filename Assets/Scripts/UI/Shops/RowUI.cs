@@ -24,7 +24,7 @@ namespace RPG.UI.Shops
             this.currentShop = currentShop;
             this.item = item;
             nameField.text = item.GetName();
-            priceField.text = $"{item.GetPrice()}g";
+            priceField.text = $"{item.GetPrice()}";
             availabilityField.text = $"{item.GetAvailability():N0}";
             iconField.sprite = item.GetIcon();
             qtyField.text = $"{item.GetQtyInTransaction()}";

@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7619037996647187605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: c6ad1a3a-33e7-43ef-840a-45b51c71c2f8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Open the chest
+  children:
+  - 51c344d6-88a3-4b5f-828f-2147b9cfc64b
+  rect:
+    serializedVersion: 2
+    x: 459
+    y: 60
+    width: 200
+    height: 220
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        paramaters:
+        - Dead men tell no tales
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        paramaters:
+        - Dead men tell no tales
+        negate: 1
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-6199189209651912617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 51c344d6-88a3-4b5f-828f-2147b9cfc64b
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You take the contents of the chest.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 708
+    y: 60
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: CompleteQuest
+  onExitAction: 
+--- !u!114 &-4442024606041582010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 306815db-6740-4f78-bd60-e4d1948b3995
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You find the dwarven chest before you.
+  children:
+  - 0e1f8e4c-7bbc-4735-87ee-6e2c0fa348fd
+  - c6ad1a3a-33e7-43ef-840a-45b51c71c2f8
+  rect:
+    serializedVersion: 2
+    x: 152
+    y: 144
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: FindChest
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf093c10f6dc3c4790ba9c7750a5875, type: 3}
+  m_Name: Dwarf Forge Chest
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -4442024606041582010}
+  - {fileID: 2482357201333183969}
+  - {fileID: -7619037996647187605}
+  - {fileID: -6199189209651912617}
+  - {fileID: 3719165098438900649}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &2482357201333183969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 0e1f8e4c-7bbc-4735-87ee-6e2c0fa348fd
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Leave
+  children:
+  - 3643607d-4aee-49bf-b247-300c72561a40
+  rect:
+    serializedVersion: 2
+    x: 463
+    y: 309
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &3719165098438900649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 3643607d-4aee-49bf-b247-300c72561a40
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: You step away from the chest.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 713
+    y: 309
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 

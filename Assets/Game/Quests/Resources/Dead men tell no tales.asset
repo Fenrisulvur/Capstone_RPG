@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e429d4de5db863a4c9314cebd3580425, type: 3}
+  m_Name: Dead men tell no tales
+  m_EditorClassIdentifier: 
+  objectives:
+  - reference: 1
+    description: Find the chest
+  - reference: 2
+    description: Loot the chest
+  rewards:
+  - number: 1000
+    item: {fileID: 11400000, guid: e181246d2368cf8488ab0c9a996cfc33, type: 2}
+  - number: 600
+    item: {fileID: 11400000, guid: 9317c535ac98b814aaba1d1211ab907c, type: 2}
+  - number: 6
+    item: {fileID: 11400000, guid: 1abbd91c86e8f9844b12502b7c1c8588, type: 2}
+  - number: 1
+    item: {fileID: 11400000, guid: c236028e4d6498140993bedf9575a9ac, type: 2}

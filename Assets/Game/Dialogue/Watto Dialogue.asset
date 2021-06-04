@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8603933095961105344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: ee1be81e-00e7-40ff-a7e9-114b7a5cc820
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: A demon incursion has riled them up.
+  children:
+  - 71abedf2-cb2e-43d3-a78c-92eef21d3969
+  - f80e305b-80f7-4e21-88aa-91c1c30cd7f9
+  rect:
+    serializedVersion: 2
+    x: 539
+    y: 102
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-8593917645726709733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 0c9af4fc-24e6-4830-8d78-f303c78ac97f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Good luck.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1660
+    y: 101
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-6714206556140771654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 71abedf2-cb2e-43d3-a78c-92eef21d3969
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Can I do anything to help?
+  children:
+  - 5edd3afc-8eeb-49fc-a807-32c6ccd38dc4
+  rect:
+    serializedVersion: 2
+    x: 911
+    y: 102
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-5134619256069389732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 2fe5b046-cef2-4aa0-9499-887177cbb863
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Why is the town hostile?
+  children:
+  - ee1be81e-00e7-40ff-a7e9-114b7a5cc820
+  rect:
+    serializedVersion: 2
+    x: 297
+    y: 102
+    width: 200
+    height: 220
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        paramaters:
+        - Brewing Trouble
+        negate: 1
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-5075016807592955349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 5edd3afc-8eeb-49fc-a807-32c6ccd38dc4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: If you could destroy the demon commander, it would likely resolve the situation.
+  children:
+  - f0b4dd58-b158-49f5-8565-2084a23f40f7
+  - f80e305b-80f7-4e21-88aa-91c1c30cd7f9
+  rect:
+    serializedVersion: 2
+    x: 1161
+    y: 102
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-1767764437773207494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: f0b4dd58-b158-49f5-8565-2084a23f40f7
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: I'm on it!
+  children:
+  - 0c9af4fc-24e6-4830-8d78-f303c78ac97f
+  rect:
+    serializedVersion: 2
+    x: 1411
+    y: 101
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: GiveQuest
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf093c10f6dc3c4790ba9c7750a5875, type: 3}
+  m_Name: Watto Dialogue
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 2119543464260841679}
+  - {fileID: -5134619256069389732}
+  - {fileID: 8766575686891811131}
+  - {fileID: -8603933095961105344}
+  - {fileID: -6714206556140771654}
+  - {fileID: -5075016807592955349}
+  - {fileID: -1767764437773207494}
+  - {fileID: -8593917645726709733}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &2119543464260841679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: 19950d00-278c-4e74-a21d-c2b1559b57c3
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: Greetings
+  children:
+  - 2fe5b046-cef2-4aa0-9499-887177cbb863
+  - f80e305b-80f7-4e21-88aa-91c1c30cd7f9
+  rect:
+    serializedVersion: 2
+    x: 50
+    y: 261
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &8766575686891811131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29feb3d771c4f6f4f9d8a24093a8b955, type: 3}
+  m_Name: f80e305b-80f7-4e21-88aa-91c1c30cd7f9
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Goodbye
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1454
+    y: 759
+    width: 200
+    height: 220
+  condition:
+    and: []
+  onEnterAction: 
+  onExitAction: 

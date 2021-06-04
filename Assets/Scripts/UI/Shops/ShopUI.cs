@@ -69,7 +69,7 @@ namespace RPG.UI.Shops
                 RowUI row = Instantiate<RowUI>(rowPrefab, listRoot);
                 row.Setup(currentShop, item);
             }
-            totalField.text = $"Total: {currentShop.TransactionTotal():N0}g";
+            totalField.text = $"Total: {currentShop.TransactionTotal():N0}";
             totalField.color = currentShop.HasSufficientFunds() ? originalTotalTextColor : Color.red;
             confirmButton.interactable = currentShop.CanTransact();
             TextMeshProUGUI switchText = switchButton.GetComponentInChildren<TextMeshProUGUI>();

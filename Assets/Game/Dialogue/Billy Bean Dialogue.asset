@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 904
     y: 465
     width: 200
-    height: 200
+    height: 220
   condition:
     and: []
   onEnterAction: 
@@ -46,13 +46,13 @@ MonoBehaviour:
     x: 646
     y: 512
     width: 200
-    height: 200
+    height: 220
   condition:
     and:
     - or:
       - predicate: CompletedQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 1
   onEnterAction: 
   onExitAction: 
@@ -76,13 +76,13 @@ MonoBehaviour:
     x: 629
     y: 289
     width: 200
-    height: 200
+    height: 220
   condition:
     and:
     - or:
       - predicate: CompletedQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 0
   onEnterAction: 
   onExitAction: 
@@ -129,13 +129,13 @@ MonoBehaviour:
     x: 299
     y: 271
     width: 200
-    height: 200
+    height: 220
   condition:
     and:
     - or:
       - predicate: CompletedQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 0
   onEnterAction: TalkToBilly
   onExitAction: 
@@ -160,7 +160,7 @@ MonoBehaviour:
     x: 626
     y: 58
     width: 200
-    height: 200
+    height: 220
   condition:
     and:
     - or:
@@ -171,7 +171,7 @@ MonoBehaviour:
     - or:
       - predicate: CompletedQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 1
   onEnterAction: 
   onExitAction: 
@@ -195,7 +195,7 @@ MonoBehaviour:
     x: 902
     y: 159
     width: 200
-    height: 200
+    height: 220
   condition:
     and: []
   onEnterAction: 

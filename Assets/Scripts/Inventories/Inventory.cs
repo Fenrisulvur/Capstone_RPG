@@ -3,6 +3,7 @@ using UnityEngine;
 using RPG.Saving;
 using RPG.Core;
 using System.Collections.Generic;
+using RPG.Stats;
 
 namespace RPG.Inventories
 {
@@ -103,6 +104,11 @@ namespace RPG.Inventories
             if (item is CurrencyItem coins)
             {
                 GetComponent<Purse>().UpdateBalance(number);
+                return true;
+            }
+            if (item is ExperienceItem exp)
+            {
+                GetComponent<Experience>().GainExperience(number);
                 return true;
             }
             int i = FindSlot(item);

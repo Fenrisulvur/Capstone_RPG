@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: AOE Test Spell
   m_EditorClassIdentifier: 
   itemID: 091c330d-4797-4a69-b03d-ec4941ddf41e
-  displayName: Test Spell
-  description: TEST
+  displayName: Arcane Eruption
+  description: Summons an arcane explosion at the specified area. It damages all
+    enemies within its radius.
   icon: {fileID: 21300000, guid: d8406bef1054c2f4aa1c3bea4b1b24e5, type: 3}
   pickup: {fileID: 8943284681380763985, guid: 20547312409913c459d629daa905acb7, type: 3}
   stackable: 0
@@ -22,7 +23,7 @@ MonoBehaviour:
   category: 5
   consumable: 0
   cooldown: 10
-  dmg: 50
+  dmg: 30
   AoEPrefab: {fileID: 3737759899170353089, guid: 9811f316ccfe681488c24244e89a4fe2,
     type: 3}
   maxRange: 20

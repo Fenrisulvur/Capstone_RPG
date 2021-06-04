@@ -16,10 +16,9 @@ namespace RPG.Attributes
         
         private void Awake() 
         {
-            fighter=GetComponent<Fighter>();
-            health=GetComponent<Health>();
+            fighter = GetComponent<Fighter>();
+            health  = GetComponent<Health>();
         }
-        
         
         private void Update()
         {

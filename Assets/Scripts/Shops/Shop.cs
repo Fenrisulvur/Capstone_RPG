@@ -88,6 +88,7 @@ namespace RPG.Shops
 
         public void SetShopper(Shopper shopper)
         {
+            transaction.Clear();
             this.currentShopper = shopper;
         }
 
@@ -131,6 +132,7 @@ namespace RPG.Shops
 
         public bool HasInventorySpace()
         {
+            if (!isBuyingMode) return true;
             Inventory shopperInventory = currentShopper.GetComponent<Inventory>();
             if (shopperInventory == null) return false;
 
@@ -158,7 +160,6 @@ namespace RPG.Shops
 
         public bool IsTransactionEmpty()
         {
-            if (!isBuyingMode) return true;
             return transaction.Count == 0;
         }
 

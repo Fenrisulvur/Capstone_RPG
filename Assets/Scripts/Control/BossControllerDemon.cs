@@ -16,11 +16,16 @@ namespace RPG.Control
         [SerializeField] int maxAOECount = 10;
         [SerializeField] int minAOECount = 5;
 
+        Health health = null;
         float timeSinceLastProjectile = Mathf.Infinity;
 
         protected override void Start() {
             guardPosition.ForceInit();
-            InvokeRepeating("SpawnAOE", 0f, 5f);
+            health = GetComponent<Health>();
+            if (health != null && health.GetHealthValue() > 0)
+            {
+                InvokeRepeating("SpawnAOE", 0f, 5f);
+            }
         }
 
         protected override void AttackBehaviour()

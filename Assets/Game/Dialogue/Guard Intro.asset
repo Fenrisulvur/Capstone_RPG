@@ -27,12 +27,12 @@ MonoBehaviour:
     - or:
       - predicate: HasQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 0
     - or:
       - predicate: CompletedQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 1
   onEnterAction: 
   onExitAction: 
@@ -140,7 +140,7 @@ MonoBehaviour:
     - or:
       - predicate: HasQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 1
   onEnterAction: 
   onExitAction: 
@@ -226,12 +226,12 @@ MonoBehaviour:
     - or:
       - predicate: HasQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 0
     - or:
       - predicate: CompletedQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 0
       - predicate: HasInventoryItem
         paramaters:
@@ -240,7 +240,7 @@ MonoBehaviour:
     - or:
       - predicate: CompletedQuest
         paramaters:
-        - Find the missing beans
+        - Bean there done that
         negate: 1
   onEnterAction: 
   onExitAction: AcceptBeans
@@ -339,7 +339,7 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 557
-    y: 693
+    y: 694
     width: 200
     height: 220
   condition:
