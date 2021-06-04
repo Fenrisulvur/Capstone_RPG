@@ -16,7 +16,7 @@ namespace RPG.Control
         [SerializeField] int maxAOECount = 10;
         [SerializeField] int minAOECount = 5;
 
-        Health health = null;
+        
         float timeSinceLastProjectile = Mathf.Infinity;
 
         protected override void Start() {
